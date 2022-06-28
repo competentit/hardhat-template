@@ -5,6 +5,7 @@ import chalk from "chalk";
 import dotenv from "dotenv";
 import "hardhat-deploy";
 import "hardhat-gas-reporter";
+import "hardhat-packager";
 import { HardhatUserConfig } from "hardhat/config";
 import "solidity-coverage";
 import "./tasks";
@@ -16,7 +17,7 @@ const {
   INFURA_PROJECT_ID = "84842078b09946638c03157f83405213",
   MNEMONIC = "overn merry manual oil detail fit pair boat possible pitch icon donkey",
   REPORT_GAS = "false",
-  SOLIDITY_VERSION = "0.8.9",
+  SOLIDITY_VERSION = "0.8.15",
 } = process.env;
 
 if (!MNEMONIC) {
@@ -32,7 +33,7 @@ const accounts = {
 
 const config: HardhatUserConfig = {
   etherscan: {
-    apiKey: ETHERSCAN_API_KEY,
+    apiKey: ETHERSCAN_API_KEY!,
   },
   gasReporter: {
     coinmarketcap: COIN_MARKET_CAP_API_KEY,
@@ -117,6 +118,10 @@ const config: HardhatUserConfig = {
   },
   typechain: {
     target: "ethers-v5",
+  },
+  packager: {
+    contracts: ["Greeter"],
+    includeFactories: true,
   },
   namedAccounts: {
     deployer: {
