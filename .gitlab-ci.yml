@@ -50,21 +50,6 @@ test:
     reports:
       junit: ./test-results.xml
 
-profile:
-  stage: test
-  needs: ["build"]
-  dependencies:
-    - build
-  cache:
-    <<: *cache
-  script:
-    - yarn run profile
-  artifacts:
-    paths:
-      - ./gas-profile-report.txt
-    reports:
-      metrics: ./gas-profile-report.txt
-
 coverage:
   stage: test
   needs: ["build"]
