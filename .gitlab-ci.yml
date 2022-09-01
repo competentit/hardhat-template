@@ -1,8 +1,6 @@
 include:
   - template: Workflows/MergeRequest-Pipelines.gitlab-ci.yml
 
-image: node:lts-alpine
-
 before_script:
   - YARN_CHECKSUM_BEHAVIOR=update yarn
   - yarn install --immutable
