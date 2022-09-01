@@ -3,6 +3,7 @@ import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
 import chalk from "chalk";
 import dotenv from "dotenv";
+import "hardhat-contract-sizer";
 import "hardhat-deploy";
 import "hardhat-gas-reporter";
 import "hardhat-packager";
@@ -40,6 +41,12 @@ const config: HardhatUserConfig = {
     currency: "USD",
     enabled: REPORT_GAS === "true" ? true : false,
     src: "./contracts/",
+  },
+  contractSizer: {
+    alphaSort: true,
+    disambiguatePaths: false,
+    runOnCompile: true,
+    strict: true,
   },
   solidity: {
     version: SOLIDITY_VERSION,
