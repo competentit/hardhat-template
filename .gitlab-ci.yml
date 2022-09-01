@@ -15,8 +15,8 @@ default:
   tags:
     - build-solidity
   before_script:
+    - YARN_CHECKSUM_BEHAVIOR=update yarn
     - yarn install --immutable
-
 stages:
   - build
   - test
