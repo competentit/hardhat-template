@@ -60,7 +60,9 @@ coverage:
   coverage: '/^Statements\s*:\s*([^%]+)/'
   artifacts:
     reports:
-      cobertura: ./coverage/cobertura-coverage.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: ./coverage/cobertura-coverage.xml
 
 lint:
   stage: lint
