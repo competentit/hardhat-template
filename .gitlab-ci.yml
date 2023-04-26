@@ -5,7 +5,7 @@ cache: &cache
   key:
     files:
       - ./yarn.lock
-      - ./.yarnrrc.yml
+      - ./.yarnrc.yml
   paths:
     - ./.yarn/cache/
   policy: pull
