@@ -23,6 +23,7 @@
     ],
     "imports-on-top": "error",
     "modifier-name-mixedcase": "error",
+    "no-console": "warn",
     "no-inline-assembly": "off",
     "no-unused-vars": "error",
     "not-rely-on-block-hash": "off",
