@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "description": "",
   "devDependencies": {
-    "@codechecks/client": "^0.1.12",
     "@defi-wonderland/smock": "^2.3.4",
     "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@^0.3.0-beta.13",
     "@nomiclabs/hardhat-waffle": "^2.0.5",
@@ -48,7 +47,7 @@
     "typescript": "~5.0.4"
   },
   "engines": {
-    "node": ">=14.0.0",
+    "node": ">=18.0.0",
     "npm": "please-use-yarn",
     "yarn": ">=1.22.5"
   },
