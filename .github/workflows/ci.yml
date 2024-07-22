@@ -56,18 +56,6 @@ jobs:
           CI: 1
           REPORT_GAS: true
 
-      - name: Upload gas reports to CodeChecks
-        run: |
-          yarn run codechecks
-        env:
-          CC_SECRET: ${{ secrets.CODE_CHECKS_SECRET }}
-
       - name: Test the contracts and run code coverage
         run: |
           yarn run coverage
-
-      - name: Upload coverage report to Codecov
-        uses: codecov/codecov-action@v2
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./coverage/lcov.info
